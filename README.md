@@ -1,2 +1,4 @@
 # ADM-HW1
-Esercizes of  hw 1 of ADM
+## Exercises of homework 1 of Algorithmic Method of Data Mining
+### I completed all the challenges provided in homework 1 
+
