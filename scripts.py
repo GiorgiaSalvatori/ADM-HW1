@@ -1313,6 +1313,183 @@ def depth(elem, level):
     for child in elem:
         if len(child):
            depth(child,level) 
+        
+        
+        
+#Birthday Cake Candles
+
+import math
+import os
+import random
+import re
+import sys
+
+def birthdayCakeCandles(candles):
+    m=max(candles)
+    return (candles.count(m))
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    candles_count = int(input().strip())
+    candles = list(map(int, input().rstrip().split()))
+    result = birthdayCakeCandles(candles)
+    fptr.write(str(result) + '\n')
+    fptr.close()
+
+    
+    
+    
+ #Number Line Jumps
+
+import math
+import os
+import random
+import re
+import sys
+
+def kangaroo(x1, v1, x2, v2):
+    if v1!=v2: #evito la divisione per zero
+        k=int(abs((x1-x2)/(v1-v2)))
+        if x1+v1*k==x2+v2*k: #stampa Yes se esite k intero t.c. x1+k*v1=x2+k*v2 
+            return 'YES'
+        else:
+            return 'NO'
+    else:
+        if x1==x2: #se v1=v2 'YES ses x1=x2
+            return 'YES'
+        else:
+            return 'NO'
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    
+    
+    
+    
+ #Athlete Sort
+
+import math
+import os
+import random
+import re
+import sys
+
+if __name__ == '__main__':
+    nm = input().split()
+    n = int(nm[0])
+    m = int(nm[1])
+    arr = []
+    for _ in range(n):
+        arr.append(list(map(int, input().rstrip().split())))
+    k = int(input())
+    sorted_arr=sorted(arr,key=lambda athlete: athlete[k])
+    for el in sorted_arr:
+        str_el = [str(a) for a in el]
+        print(' '.join(str_el))
+        
+        
+        
+        
+#ginortS
+
+txt=input()
+lower_letter=[]
+upper_letter=[]
+even_digit=[]
+odd_digit=[]
+for el in txt:
+    if el.islower():
+        lower_letter.append(el)
+    elif el.isupper():
+        upper_letter.append(el)
+    elif int(el)%2==0:
+        even_digit.append(el)
+    else:
+        odd_digit.append(el)
+        
+   
+
+ #Insertion Sort - Part 1
+  
+import math
+import os
+import random
+import re
+import sys
+
+def insertionSort1(n, arr):
+    k=arr[-1]
+    j=n-2
+    while(j>=0 and k<=arr[j]):
+        arr[j+1]=arr[j]
+        j=j-1
+        str_arr=[str(el) for el in arr]
+        print(" ".join(str_arr))
+    arr[j+1]=k
+    str_arr=[str(el) for el in arr]
+    print(" ".join(str_arr))
+    
+if __name__ == '__main__':
+    n = int(input()) 
+    arr = list(map(int, input().rstrip().split()))
+    insertionSort1(n, arr)
+
+    
+    
+    
+#Insertion Sort - Part 2
+import math
+import os
+import random
+import re
+import sys
+
+def insertionSort2(n, arr):
+    for i in range(n):
+        k=arr[i]
+        j=i-1
+        while j>=0 and k<arr[j]:  
+            arr[j+1]=arr[j]
+            j=j-1        
+        arr[j+1]=k
+        if i>0:
+           str_arr=[str(el) for el in arr]
+           print(" ".join(str_arr))   
+            
+if __name__ == '__main__':
+    n = int(input())
+    arr = list(map(int, input().rstrip().split()))
+    insertionSort2(n, arr)
+    str_arr=[str(el) for el in arr]
+    
+    
+    
+    
+#Viral Advertising
+
+import math
+import os
+import random
+import re
+import sys
+
+def viralAdvertising(n):
+    total_liked=0
+    shared=5
+    for i in range(1,n+1):
+        liked=math.floor(shared/2)
+        total_liked+=liked 
+        shared=liked*3
+    return total_liked        
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    n = int(input())
+    result = viralAdvertising(n)
+    fptr.write(str(result) + '\n')
+    fptr.close()
+
+
+
 
 
 
